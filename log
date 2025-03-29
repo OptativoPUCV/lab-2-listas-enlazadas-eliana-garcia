@@ -2,3 +2,29 @@ Fri, Mar 28, 2025  9:04:30 PM:
  tests:  0|6
 total_score: 0/70
 25021aa
+Fri, Mar 28, 2025  9:35:32 PM: 
+ list.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+list.c: In function 'createList':
+list.c:33:5: error: unknown type name 'list'
+     list *list = (list*) malloc (sizeof(list));
+     ^~~~
+list.c:33:24: error: expected expression before ')' token
+     list *list = (list*) malloc (sizeof(list));
+                        ^
+list.c:34:9: error: request for member 'head' in something not a structure or union
+     list->head = NULL;
+         ^~
+list.c:35:9: error: request for member 'tail' in something not a structure or union
+     list->tail = NULL;
+         ^~
+list.c:36:9: error: request for member 'current' in something not a structure or union
+     list->current = NULL;
+         ^~
+list.c:37:12: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+     return list;
+            ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+aa47192
