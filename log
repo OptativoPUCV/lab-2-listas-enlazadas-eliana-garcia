@@ -118,3 +118,29 @@ Fri, Mar 28, 2025 10:37:40 PM:
  tests:  6|4
 total_score: 25/70
 69a628e
+Fri, Mar 28, 2025 10:43:54 PM: 
+ list.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:5:0:
+list.c: In function 'pushFront':
+list.c:70:5: error: unknown type name 'node'
+     node * newNode = createNode(data);
+     ^~~~
+list.c:70:22: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+     node * newNode = createNode(data);
+                      ^~~~~~~~~~
+list.c:72:33: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+         list->head = list->tail = newNode;
+                                 ^
+list.c:74:16: error: request for member 'next' in something not a structure or union
+         newNode->next = list->head;
+                ^~
+list.c:75:26: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+         list->head->prev = newNode;
+                          ^
+list.c:76:20: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+         list->head = newNode;
+                    ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+1607215
